@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mentorship Matching Platform</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico" />
+  </head>
+  <body>
+    <script type="text/javascript">
+        //learned from the youtube tutorial - by Coding Snow - https://www.youtube.com/watch?v=VplDlwLTR50
+window.addEventListener("scroll", reveal);
+
+function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
+
+  for (var i = 0; i < reveals.length; i++) {
+    var windowheight = window.innerHeight;
+    var revealtop = reveals[i].getBoundingClientRect().top;
+    var revealpoint = 150;
+
+    if (revealtop < windowheight - revealpoint) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
+//adding parallax effect to the hero section title
+//learned this from Youtube Tutorial - by Online Tutorials - https://www.youtube.com/watch?v=1wfeqDyMUx4
+
+let titleOne = document.getElementById("title-one");
+let titleTwo = document.getElementById("title-two");
+
+window.addEventListener("scroll", function () {
+  let value = window.scrollY;
+
+  titleOne.style.right = value * 0.5 + "px";
+  titleTwo.style.left = value * 0.5 + "px";
+});
+//adding responsive nav for mobile screens
+//learned this from Youtube Tutorial - by Easy Tutorials - https://www.youtube.com/watch?v=oYRda7UtuhA
+
+function toggleMenu() {
+    var x = document.getElementById("nav-links-sub");
+    if (x.style.left != "0px") {
+      x.style.left = "0px";
+      document.body.style.overflowY = "hidden";
+    } else {
+      x.style.left = "-200px";
+      document.body.style.overflowY = "visible";
+    }
+  }
+    </script>
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
+<header class="sticky-bg">
+<nav>
+  <div class="nav-links">
+    <i class="fa fa-bars" onclick="toggleMenu()"></i>
+    <a href="#hero-section" class="hero-link">Mentorship Matching Platform</a>
+
+    <div id="nav-links-sub">
+      <ul>
+        <li><a href="#about-us">about</a></li>
+        <li><a href="#mentorship-opportunities">Mentor</a></li>
+        <li><a href="#profile-form">Mentee</a></li>
+        <li><a href="#contact">Price</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+<!-- Landing Section  -->
+
+<section id="hero-section">
+    <div class="hero-title">
+      <div class="hero-sub-container-one">
+        <span id="title-one">Shape</span>
+      </div>
+      <div class="hero-sub-container-two">
+      <!--<img
+          src="OIP (3).jpeg"
+          id="orange-slice-1"
+          class=""
+          alt=""
+        />
+        <img
+          src="OIP (3).jpeg"
+          id="orange-slice-2"
+          class=""
+          alt=""
+        /> -->
+        <span id="title-two">IT</span>
+      </div>
+    </div>
+  </section>
+  <!-- About Us  -->
+   <style>/* About Us Section styles */
+
+    #about-us {
+      min-height: 100vh;
+      max-width: 100vw;
+      background-color: #000000;
+      min-height: 100vh;
+      background-image: url(assets/images/backdrop.png);
+      background-position: center;
+      background-size: cover;
+    }
+    
+    #about-us p {
+      color: white;
+    }
+    
+    .about-us-container {
+      text-align: left;
+      width: 80%;
+      margin: auto;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .about-us-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    
+    .about-us-col {
+      padding: 10px;
+      flex-basis: 31%;
+    }
+    
+    .about-us-col h3 {
+      color: white;
+      margin-bottom: 10px;
+    }
+    /* Adding responsiveness to About Us Section */
+    
+    @media (max-width: 700px) {
+      #about-us {
+        padding: 10%;
+        padding-top: 20%;
+        padding-bottom: 20%;
+      }
+      .about-us-row {
+        flex-direction: column;
+      }
+    }</style>
+
+  <section id="about-us">
+    <div class="about-us-container">
+      <div class="about-us-row reveal">
+        <div class="about-us-col">
+          <h3>Personalized Mentorship</h3>
+          <p>
+            Connect with mentors who align with your goals.
+            Tailored guidance to help you achieve success.
+            Build skills and gain insights with one-on-one sessions.
+          </p>
+        </div>
+        <div class="about-us-col">
+          <h3>Diverse Expertise</h3>
+          <p>
+            Access mentors from various industries and fields.
+           Learn from professionals with real-world experience.
+           Gain knowledge in areas that matter most to you.
+          </p>
+        </div>
+        <div class="about-us-col">
+          <h3>Empower Growth
+        </h3>
+          <p>
+            Bridge the gap between potential and achievement.
+            Foster personal and professional development.
+            Unlock opportunities with the right guidance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Product Section -->
+   <style>/* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: rgba(0, 0, 0, 0);
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Main Form Styles */
+    main {
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0);
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 20px auto;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    label {
+        margin: 10px 0 5px;
+        font-weight: bold;
+    }
+    
+    select, input[type="text"], textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+    
+    button {
+        padding: 10px;
+        background-color: #000000;
+        color: rgb(18, 18, 18);
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+    
+    button:hover {
+        background-color: #1e1254;
+    }
+    
+    /* Mentorship Opportunities Section */
+    #mentorship-opportunities {
+        padding: 20px;
+        background-color: #0f172a;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.557);
+        max-width: 800px;
+        margin: 100px auto;
+        color: #ffffff;
+    }
+    
+    .opportunities-grid-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+    }
+    
+    .opportunity-card {
+        background-color: #334155;
+        border-radius: 8px;
+        padding: 30px;
+        text-align: center;
+        transition: transform 0.3s;
+    }
+    
+    .opportunity-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .opportunity-card h3 {
+        font-size: 20px;
+        margin: 10px 0;
+        color: #f4f4f4;
+    }
+    
+    .opportunity-card p {
+        font-size: 16px;
+        margin: 5px 0;
+        color: #ffffff;
+    }
+    
+    .opportunity-card button {
+        padding: 8px;
+        background-color: #4292e7;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .opportunity-card button:hover {
+        background-color: #0056b3;
+    }
+    
+    /* Adding Responsiveness */
+    @media (max-width: 700px) {
+        main, #mentorship-opportunities {
+            padding: 15px;
+        }
+    
+        button {
+            width: 100%;
+        }
+    }</style>
+  <body>
+   
+    <main>
+      <h2 class="success-title">Choose Your Role</h2>
+      <style> .success-title {
+        text-align: center;
+        color:#000000
+        
+      } 
+     
+      </style>
+     
+        <form id="profile-form">
+            <label for="role">Role:</label>
+            <select id="role" required>
+                <option value="mentor">Mentor</option>
+                <option value="mentee">Mentee</option>
+            </select>
+            <label for="skills">Skills:</label>
+            <input type="text" id="skills" placeholder="e.g., JavaScript, Python" required />
+            <label for="interests">Interests:</label>
+            <input type="text" id="interests" placeholder="e.g., Web Development, Data Science" required />
+            <label for="bio">Bio:</label>
+            <textarea id="bio" placeholder="Tell us about yourself..." required></textarea>
+            <button type="submit">Save Profile</button>
+        </form>
+    </main>
+
+    <!-- Mentorship Opportunities Section -->
+    <section id="mentorship-opportunities">
+        <h2>Available Mentorship Opportunities</h2>
+        <div class="opportunities-grid-wrapper reveal">
+            <div class="opportunity-card">
+                <h3>Mentor: Jane Smith</h3>
+                <p>Skills: Python, Data Science</p>
+                <p>Interests: AI, Machine Learning</p>
+                <button>Connect</button>
+            </div>
+            <div class="opportunity-card">
+                <h3>Mentor: John Doe</h3>
+                <p>Skills: JavaScript, Web Development</p>
+                <p>Interests: Frontend Development, UX Design</p>
+                <button>Connect</button>
+            </div>
+            <div class="opportunity-card">
+                <h3>Mentor: Emily Johnson</h3>
+                <p>Skills: Marketing, Business Strategy</p>
+                <p>Interests: Entrepreneurship, Startups</p>
+                <button>Connect</button>
+            </div>
+            <div class="opportunity-card">
+                <h3>Mentor: Michael Brown</h3>
+                <p>Skills: Graphic Design, Branding</p>
+                <p>Interests: Creative Arts, Visual Communication</p>
+                <button>Connect</button>
+            </div>
+            
+            <!-- More mentorship opportunities can be added here -->
+        </div>
+    </section>
+</body>
+  <!-- Call To Action Section -->
+      </div>
+     
+  </section>
+  <!-- Footer Section -->
+ <script>
+  // Add this script tag right before closing </body> tag
+
+// Database simulation using localStorage
+const db = {
+  users: JSON.parse(localStorage.getItem('users') || '[]'),
+  connections: JSON.parse(localStorage.getItem('connections') || '[]'),
+  
+  saveUsers() {
+    localStorage.setItem('users', JSON.stringify(this.users));
+  },
+  
+  saveConnections() {
+    localStorage.setItem('connections', JSON.stringify(this.connections));
+  }
+};
+
+// Form handlers
+document.getElementById('profile-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const user = {
+    id: Date.now(),
+    role: document.getElementById('role').value,
+    skills: document.getElementById('skills').value.split(',').map(s => s.trim()),
+    interests: document.getElementById('interests').value.split(',').map(i => i.trim()),
+    bio: document.getElementById('bio').value
+  };
+  
+  db.users.push(user);
+  db.saveUsers();
+  
+  if (user.role === 'mentor') {
+    updateMentorsList();
+  }
+  
+  this.reset();
+  alert('Profile saved successfully!');
+});
+
+// Update mentors list
+function updateMentorsList() {
+  const wrapper = document.querySelector('.opportunities-grid-wrapper');
+  wrapper.innerHTML = '';
+  
+  const mentors = db.users.filter(user => user.role === 'mentor');
+  
+  mentors.forEach(mentor => {
+    const card = document.createElement('div');
+    card.className = 'opportunity-card';
+    card.innerHTML = `
+      <h3>Mentor: ${mentor.id}</h3>
+      <p>Skills: ${mentor.skills.join(', ')}</p>
+      <p>Interests: ${mentor.interests.join(', ')}</p>
+      <button onclick="connectWithMentor(${mentor.id})">Connect</button>
+    `;
+    wrapper.appendChild(card);
+  });
+}
+
+// Connect with mentor
+function connectWithMentor(mentorId) {
+  const connection = {
+    id: Date.now(),
+    mentorId,
+    menteeId: getCurrentUserId(),
+    status: 'pending'
+  };
+  
+  db.connections.push(connection);
+  db.saveConnections();
+  alert('Connection request sent!');
+}
+
+// Helper function to simulate current user
+function getCurrentUserId() {
+  return Date.now();
+}
+
+// Initial load
+updateMentorsList();
+ </script>
+ <html>
+ <html lang="en">
+ <style>
+  /* Dashboard Layout */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: #0f172a;
+    min-height: 100vh;
+}
+
+/* Card Styles */
+.card {
+    background-color: #1e293b;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Header */
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    color: #ffffff;
+}
+
+.card-header i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: #60a5fa;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* Progress Bar */
+.progress-bar {
+    background-color: #334155;
+    height: 0.75rem;
+    border-radius: 1rem;
+    margin: 1rem 0;
+}
+
+.progress-fill {
+    background-color: #60a5fa;
+    height: 100%;
+    width: 75%;
+    border-radius: 1rem;
+    transition: width 0.3s ease;
+}
+
+/* Text Styles */
+p {
+    color: #ffffff;
+    margin: 0.5rem 0;
+}
+
+/* Badge */
+.badge {
+    background-color: #60a5fa;
+    color: #ffffff;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeInUp 0.5s ease forwards;
+}
+     </style>
+ </head>
+ <main class="dashboard">
+         <div class="card">
+             <div class="card-header">
+                 <i class="fas fa-chart-line"></i>
+                 <h2>Progress Tracking</h2>
+             </div>
+             <div class="progress-bar">
+                 <div class="progress-fill"></div>
+             </div>
+             <p>75% Goals Completed</p>
+         </div>
+ 
+         <div class="card">
+             <div class="card-header">
+                 <i class="fas fa-calendar"></i>
+                 <h2>Upcoming Sessions</h2>
+             </div>
+             <p>Web Development Basics</p>
+             <p style="color: #9ca3af; margin-top: 0.5rem;">Tomorrow, 2:00 PM</p>
+         </div>
+ 
+         <div class="card">
+             <div class="card-header">
+                 <i class="fas fa-message"></i>
+                 <h2>Messages</h2>
+             </div>
+             <div style="display: flex; justify-content: space-between; align-items: center;">
+                 <p>2 unread messages</p>
+                 <span class="badge">New</span>
+             </div>
+         </div>
+     </main>
+ 
+     <script>
+ 
+         // Add card animation on scroll
+         const observer = new IntersectionObserver((entries) => {
+             entries.forEach(entry => {
+                 if (entry.isIntersecting) {
+                     entry.target.style.opacity = '1';
+                     entry.target.style.transform = 'translateY(0)';
+                 }
+             });
+         }, { threshold: 0.1 });
+ 
+         document.querySelectorAll('.card').forEach(card => {
+             card.style.opacity = '0';
+             card.style.transform = 'translateY(20px)';
+             observer.observe(card);
+         });
+     </script>
+ 
+</body>
+</html>

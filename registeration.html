@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentorship Platform - Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: rgb(28, 23, 74);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .auth-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            color: white;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .role-selector {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .role-btn {
+            flex: 1;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .role-btn.active {
+            background: #4f46e5;
+            border-color: #4f46e5;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: #4f46e5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #4338ca;
+        }
+
+        .toggle-form {
+            text-align: center;
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .toggle-form a {
+            color: #4f46e5;
+            text-decoration: none;
+            margin-left: 5px;
+        }
+
+        .toggle-form a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            .auth-container {
+                width: 95%;
+                padding: 1.5rem;
+            }
+
+            .form-header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="form-header">
+            <h1>Create Account</h1>
+            <p>Join our mentorship community</p>
+        </div>
+
+        <form id="registerForm">
+            <div class="role-selector">
+                <button type="button" class="role-btn active" data-role="mentee">Mentee</button>
+                <button type="button" class="role-btn" data-role="mentor">Mentor</button>
+            </div>
+
+            <div class="form-group">
+                <i class="fas fa-user"></i>
+                <input type="text" class="form-control" placeholder="Full name" required>
+            </div>
+
+            <div class="form-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" class="form-control" placeholder="Email address" required>
+            </div>
+
+            <div class="form-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" class="form-control" placeholder="Password" required>
+            </div>
+
+            <div class="form-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" class="form-control" placeholder="Confirm password" required>
+            </div>
+
+            <button type="button" class="submit-btn" onclick="window.location.href='index.html'">Create Account</button>
+            <div class="toggle-form">
+                Already have an account?<a href="index.html">Sign In</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Role selector functionality
+        const roleButtons = document.querySelectorAll('.role-btn');
+        roleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                roleButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+
+        // Form submission
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add registration logic here
+        });
+    </script>
+</body>
+</html>
